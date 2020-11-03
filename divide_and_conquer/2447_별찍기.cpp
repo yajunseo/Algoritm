@@ -8,6 +8,7 @@ int n;
 
 void devideStarPrint(int num1, int num2)
 {
+	int temp = 0;
 	int temp1 = 0;
 	int temp2 = 0;
 	for (int i = n; i >= 3; i /= 3)
@@ -20,12 +21,10 @@ void devideStarPrint(int num1, int num2)
 			cout << " ";
 			return;
 		}
-
+		temp++;
 	}
-	if (num1 % 3 == 1 && num2 % 3 == 1)
-		cout << " ";
-	else
-		cout << "*";
+
+	cout << "*";
 }
 
 
@@ -47,6 +46,6 @@ int main()
 {
 	cin >> n;
 	printStar();
-	
+
 	return 0;
 }

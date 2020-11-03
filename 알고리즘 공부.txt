@@ -6,4 +6,4 @@
 삼성전자 소프트웨어 역량 테스트
 
 이번주 문제
-https://www.acmicpc.net/problem/1932
+https://www.acmicpc.net/problem/1149
