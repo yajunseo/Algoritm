@@ -7,7 +7,7 @@
 using namespace std;
 int n;
 
-vector <int> *v;
+vector <int>* v;
 
 int main()
 {
@@ -38,7 +38,7 @@ int main()
 	for (int i = 0; i < n; i++)
 	{
 		sort(v[i].begin(), v[i].end());
-		cout << i << "¹ø : ";
+		cout << i + 1 << "¹ø : ";
 		for (int j = 0; j < v[i].size(); j++)
 			cout << v[i][j] << " ";
 		cout << endl;
