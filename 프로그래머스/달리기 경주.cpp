@@ -2,37 +2,33 @@
 #include <vector>
 #include <algorithm>
 #include <map>
-
+#include <unordered_map>
 
 using namespace std;
 
-vector<string> solution(vector<string> players, vector<string> callings) {
-    vector<string> answer;
+vector<int> solution(vector<string> name, vector<int> yearning, vector<vector<string>> photo) {
+    vector<int> answer;
 
-    map<int, string> m1;
-    map<string, int> m2;
+    unordered_map<string, int> m;
 
-    for (int i = 0; i < players.size(); i++)
+    for (int i = 0; i < name.size(); i++)
     {
-        m1[i] = players[i];
-        m2[players[i]] = i;
+        m[name[i]] = yearning[i];
     }
 
-    for (string s : callings)
+    for (vector<string> vec : photo)
     {
-        int rank = m2[s];
-        string prevPerson = m1[rank - 1];
+        int sum = 0;
 
-        m1[rank] = prevPerson;
-        m1[rank - 1] = s;
+        for (string s : vec)
+        {
+            if (m.find(s) != m.end())
+            {
+                sum += m[s];
+            }
+        }
 
-        m2[prevPerson] = rank;
-        m2[s] = rank - 1;
-    }
-
-    for (auto s : m1)
-    {
-        answer.push_back(s.second);
+        answer.push_back(sum);
     }
 
     return answer;
