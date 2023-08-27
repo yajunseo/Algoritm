@@ -37,5 +37,4 @@ vector<int> solution(vector<string> name, vector<int> yearning, vector<vector<st
 int main()
 {
    //test
-   //커밋 되돌리기 테스트 중
 }
