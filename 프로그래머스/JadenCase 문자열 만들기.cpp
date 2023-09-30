@@ -8,23 +8,26 @@ using namespace std;
 string solution(string s) {
     string answer = "";
 
-    bool isFirst = true
+    bool isFirst = true;
 
     for (auto c : s)
     {
-        cout << c << endl;
-        char t = c;
-
-        if (!isdigit(t))
+        if (!isdigit(c))
         {
             if (isFirst)
             {
-                t = toupper(c);
+                answer += toupper(c);
+            }
+            else
+            {
+                answer += tolower(c);
             }
         }
 
-        answer += t;
-
+        else
+        {
+            answer += c;
+        }
 
         if (c == ' ')
         {
